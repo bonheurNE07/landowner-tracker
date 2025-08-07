@@ -6,9 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { UserRound } from "lucide-react";
-import Link from "next/link";
 
-export function LoginForm() {
+export function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -18,9 +17,9 @@ export function LoginForm() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate login delay
+    // Simulate Register delay
     setTimeout(() => {
-      // Simulated login success
+      // Simulated Register success
       setLoading(false);
       router.push("/dashboard");
     }, 1500);
@@ -65,19 +64,8 @@ export function LoginForm() {
 
       {/* Submit button */}
       <Button type="submit" className="w-full" disabled={loading}>
-        {loading ? "Signing in..." : "Login"}
+        {loading ? "Signing up..." : "Register"}
       </Button>
-
-      {/* Footer / registration prompt */}
-      <p className="text-sm text-center text-muted-foreground">
-        Don’t have an account?{" "}
-        <Link
-          href="/register"
-          className="text-primary underline underline-offset-4 hover:text-primary/90"
-        >
-          Register here
-        </Link>
-      </p>
     </form>
   );
 }

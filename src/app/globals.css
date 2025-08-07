@@ -49,8 +49,6 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.9612 0 0);
-  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -84,10 +82,12 @@
   --color-primary-default: oklch(0.6629 0.2272 35.97);
   --font-lekton: var(--font-lekton);
   --text-title: clamp(1.875rem, 0.8148rem + 4.2409vw, 5rem);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
 }
 
 .dark {
-  --background: oklch(0.209 0 0);
+  --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -136,4 +136,13 @@
 
 .line-shadow {
   filter: url(#orange-glow);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

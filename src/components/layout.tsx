@@ -1,24 +1,17 @@
-// app/dashboard/layout.tsx
+import { AdminSidebar } from "./sidebar";
+import { AdminHeader } from "./NavBar";
+import { ReactNode } from "react";
 
-import React from "react";
-import Link from "next/link";
-
-export default function MainLayout({ children }: { children: React.ReactNode }) {
+export default function AdminLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <div className="min-h-screen flex bg-gray-50">
-      {/* Sidebar */}
-      <aside className="w-64 bg-white border-r shadow-md p-4">
-        <h2 className="text-xl font-bold mb-6">Landowner App</h2>
-        <nav className="space-y-3">
-          <Link href="/dashboard" className="block text-gray-700 hover:text-blue-600">Dashboard</Link>
-          <Link href="/projects" className="block text-gray-700 hover:text-blue-600">Projects</Link>
-          <Link href="/stock" className="block text-gray-700 hover:text-blue-600">Stock</Link>
-          <Link href="/expenses" className="block text-gray-700 hover:text-blue-600">Expenses</Link>
-        </nav>
-      </aside>
-
-      {/* Main Content */}
-      <main className="flex-1 p-6">{children}</main>
+    <div className="h-screen flex flex-col">
+      <AdminHeader />
+      <div className="flex flex-1 overflow-hidden min-h-[calc(100vh-56px)]">
+        <AdminSidebar />
+        <div className="flex-1 overflow-y-auto">
+          <main className="flex-1 p-4 lg:p-6 overflow-y-auto">{children}</main>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,19 +1,17 @@
 "use client"
 
-import { LoginForm } from "@/components/LoginForm";
-import AuthLayout from "../layout";
+import { RegisterForm } from "@/components/RegisterForm";
 import Link from "next/link";
 
 export default function LoginPage() {
   return (
-    <AuthLayout>
-      <div className="w-full max-w-md bg-neutral-900 border border-neutral-800 rounded-xl p-8 shadow-xl">
-        <div className="flex items-center justify-center mb-6 text-gray-300">
-          <Link href="/dashboard" className="block text-2xl hover:text-blue-600"><span>---</span> Dashboard</Link>
+    <div className="self-center justify-self-center">
+      <div className="w-full max-w-md p-8">
+        <h1 className="text-2xl font-bold mb-6 text-center">
+          Get Registered
+        </h1>
+        <RegisterForm />
         </div>
-          <h1 className="text-2xl font-bold text-white mb-6 text-center">Welcome back</h1>
-          <LoginForm />
-      </div>
-    </AuthLayout>
+    </div>
   )
 }
