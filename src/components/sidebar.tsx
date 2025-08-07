@@ -14,7 +14,7 @@ export const AdminSidebar = () => {
       <div className="space-y-6">
         <Link
         key={"New Project"}
-        href={"/projects/create"}
+        href={"/projects/new"}
         >
           <button className="w-5/6 bg-gradient-to-r from-blue-600 to-blue-500 hover:opacity-90 text-white font-semibold px-4 py-3 mx-1.25 lg:mx-4 rounded-sm text-sm flex flex-row justify-center gap-2">
             + <span className="hidden lg:block">New Project</span>
