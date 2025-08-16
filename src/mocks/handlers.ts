@@ -58,4 +58,14 @@ export const handlers = [
       { month: 'Apr', value: 120 },
     ])
   }),
+
+  http.get('/api/stock/movements', () => {
+  return HttpResponse.json([
+    { date: '2025-08-01', type: 'in', label: 'Cement Delivery', quantity: 20 },
+    { date: '2025-08-03', type: 'out', label: 'Used Bricks', quantity: 50 },
+    { date: '2025-08-05', type: 'in', label: 'Iron Bars', quantity: 15 },
+    { date: '2025-08-06', type: 'out', label: 'Wood Planks', quantity: 30 },
+  ])
+})
+
 ]

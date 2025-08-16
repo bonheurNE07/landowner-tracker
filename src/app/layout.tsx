@@ -1,5 +1,4 @@
 import "@/app/globals.css";
-import { cn } from "@/lib/utils";
 import AppProviders from "@/providers";
 import { ThemeProvider } from "@/providers/theme-provider";
 
